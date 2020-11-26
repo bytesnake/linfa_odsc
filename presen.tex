@@ -70,7 +70,7 @@
     \frametitle{Classical Machine Learning}
 
     \begin{itemize}
-        \item<1-> Dominant field until 2010, before release of AlexNet
+        \item<1-> Don't the cool kids use neural nets these days?
     \only<2>{
         \begin{figure}[ht]
             \centering
@@ -84,38 +84,46 @@
 \end{frame}
 
 \begin{frame}{aim of linfa}
-    \frametitle{Linfa's Goal}
-
+    \frametitle{Why Linfa?}
+    Why do classical ML in Rust? Doesn't scikit-learn solve everything?
     \begin{itemize}
-        \item<2-> Unified workhorse
-        \only<2>{
-            \begin{figure}[ht]
-                \centering
-                \includegraphics[width=0.45\linewidth]{images/workhorse.png}
-            \end{figure}
-        }
-        \item<3-> Speed and correctness of Rust (+ Ecosystem)
-        \only<3-5>{
-        \begin{itemize}[label=-]
-            \item<3-> Use borrowing system
+        \item<2-> Rust as a universal implementation language
             \only<3>{
                 \begin{figure}[ht]
                     \centering
-                    \includegraphics[width=0.8\linewidth]{images/code1.png}
+	            \includegraphics[width=0.45\linewidth]{images/workhorse.png}
                 \end{figure}
             }
-            \item<4->{No GC, no runtime, deployment for IoT}
-            \item<5->{Excellent tools for testing, benchmarking}
+        \begin{itemize}[label=-]
+            \item<4->{Efficient, no GC, no runtime}
+	    \item<5->{Use borrowing system helps avoiding accidental copies}
+	    \item<5->{Rust has nice things ... compiler, IDE, package mgmt, testing, benchmarking, ...}
+	    \item<6->{... much nicer than C, C++, Fortran, ...}
         \end{itemize}
-        }
-        \item<6-> Offer reference implementations and guide for developers
-        \only<6-8>{
-            \begin{itemize}[label=-]
-            \item<7-> Focus on understandable implementations
-            \item<8-> Integrate Rust-Book with suitable \LaTeX
+	item<7-> Rust for performance critical situations
+        \begin{itemize}[label=-]
+            \item<8->{Large scale ML applications}
+	    \item<9->{Low memory environments (IoT)}
+        \end{itemize}	
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{aim of linfa}
+    \frametitle{Why Linfa?}
+    Why now? Why this project (linfa)?
+    \begin{itemize}
+        \item<2-> Timing: Prerequisites are now met
+        \begin{itemize}[label=-]
+            \item<3->{Matrix libraries}
+	    \item<4->{Optimization libraries}
+	    \item<5->{...}
         \end{itemize}
-        }
-        \item<9-> Explore language features for safe algorithm design
+	item<6-> Linfa is a community effort
+        \begin{itemize}[label=-]
+            \item<7->{Started by Luca Palmeri at RustFest 2019 with the explicit goal of being a community effort ...}
+	    \item<8->{... now hosted by the Rust ML WG ... }
+	    \item<9->{... and developed by a number growing number of contributers.}
+        \end{itemize}	
     \end{itemize}
 \end{frame}
 
@@ -360,9 +368,10 @@
                 \includegraphics[width=0.8\linewidth]{images/roadmap.png}
             \end{figure}
         }
-        \item<3-> But: proper testing is hard and still needs improvement
-        \item<4-> Currently unifying and polishing interfaces
-        \item<5-> Improve documentation in some crates
+        \item<3-> But: Most algorithms only implement "the basics"
+	\item<4-> Good testing is hard and still needs improvement
+        \item<4-> Interfaces are currently being unified and polished
+        \item<5-> We also need better documentation
         \item<6-> And most important of all: do some real-world experiments
     \end{itemize}
 
