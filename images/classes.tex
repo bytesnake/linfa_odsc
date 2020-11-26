@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \begin{scope}[blend group = soft light]
+    \fill[red!30!white]   ( 90:1.2) circle (3);
+    \only<3->{\fill[green!30!white] (90:1.2) circle (2);}
+    \only<4->{\fill[blue!30!white]  (90:1.2) circle (1.1);}
+  \end{scope}
+  \node at ( 90:3.6)    {Transformer};
+  \only<3->{\node at ( 90:2.6)   {Fittable};}
+  \only<4->{\node at ( 90:1.2)   {Incremental};}
+\end{tikzpicture}

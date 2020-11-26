@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\begin{axis}[%
+scatter/classes={%
+    a={mark=o,draw=black}},
+    ticks=none,
+]
+\only<2->{
+\addplot[scatter,only marks,%
+    scatter src=explicit symbolic, blue]%
+    table[x=x1, y=y1, col sep=comma] {images/scatter_embedded.dat};
+}
+\only<3->{
+\addplot[scatter,only marks,%
+    scatter src=explicit symbolic, green]%
+    table[x=x2, y=y2, col sep=comma] {images/scatter_embedded.dat};
+}
+
+\only<4->{
+\addplot[scatter,only marks,%
+    scatter src=explicit symbolic, red]%
+    table[x=x3, y=y3, col sep=comma] {images/scatter_embedded.dat};
+}
+\end{axis}
+\end{tikzpicture}
